@@ -1,0 +1,112 @@
+// Resources
+
+https://docs.python.org/3/ => Python Documentation
+https://ascii.co.uk/art => ASCII Art
+https://www.askpython.com/ => Python Documentation
+
+***************************************************************************
+
+// DAY 1
+
+print("" + "") / used for printing to console
+print(f"{variable}") / for inserting variables using f-string
+
+input("") / used for inputting data
+
+#for commenting
+
+len() / to get the length of a data and can only be used for str
+
+// DAY 2
+
+"Hello"[1] -> e
+
+type() / to get the type of a data
+
+str() / convert data to string type
+int(),float()
+
+*we cannot concatenate non string data with string data
+
+round(number,number of decimal places) / to round a number
+
+*all division operation convert the data to float type
+*floor division convert data to integer type
+
+// DAY 3
+
+if condition:
+	do this
+elif condition:
+	do this
+else condition:
+	do this
+
+.lower() / to convert all characters to lowercase
+
+.count(character) / to count how many times the character occurs
+                    in the string
+
+// DAY 4
+
+import random / for importing random module
+.randint(a,b) / a random number between a and b inclusive
+.random() / generates a number between 0 and 1 but not including
+		1
+.shuffle() / shuffles all elements in a list
+
+list = [item1,item2]
+list[0] -> item1
+list[-1] -> item2
+.append(item) / to add another item to the end of the list ( += )
+.extend([1,2,3]) / to add more than 1 items
+.choice() / randomly select and element
+
+sum(list) / returns the sum of the elements
+
+// DAY 5
+
+for item in list:
+	do this
+for number in range(a,b,step): / doesnot include b
+	do this
+
+split(", ") / splits a string into list using indicator ,
+
+max(),min() / prints the maximum and minimum value
+
+***************************************************************************
+
+// DAY 6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
