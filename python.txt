@@ -8,7 +8,11 @@ https://developers.google.com/edu/python => Google Documentation
 https://peps.python.org/pep-0008/ => Python Style Guide
 https://thonny.org/ => Visualize Functions
 https://pythontutor.com/ => Visualize Functions
-
+http://patorjk.com/software/taag/ => ASCII Art Generator 
+https://emojipedia.org/ => Emojis
+https://pypi.org/ => Python Package Index
+https://opentdb.com/ => Question Database
+https://trinket.io/docs/colors => Turtle Colors
 
 ***************************************************************************
 
@@ -19,7 +23,7 @@ print(f"{variable}") / for inserting variables using f-string
 
 input("") / used for inputting data
 
-#for commenting
+#for commenting ( """ """ )
 
 len() / to get the length of a data and can only be used for str
 
@@ -56,7 +60,7 @@ else condition:
 
 // DAY 4
 
-import random / for importing random module
+import random / for importing random module ( from random import * )
 .randint(a,b) / a random number between a and b inclusive
 .random() / generates a number between 0 and 1 but not including
 		1
@@ -65,19 +69,20 @@ import random / for importing random module
 list = [item1,item2]
 list[0] -> item1
 list[-1] -> item2
-.append(item) / to add another item to the end of the list ( += )
-.extend([1,2,3]) / to add more than 1 items
+.append(item) / to add another item to the end of the list 
+.extend([1,2,3]) / to add more than 1 items or another list ( += )
 .choice() / randomly select and element
 .clear() / removes all elements
 .index(element) / returns the first index of the element in the list
+.remove(element) / to remove the first intance of the element in the list
 
 sum(list) / returns the sum of the elements
 
 // DAY 5
 
-for item in list:
+for item in list: 
 	do this
-for number in range(a,b,step): / doesnot include b ( range(b) )
+for number in range(a,b,step): / doesnot include b ( for _ in range(b) )
 	do this
 
 split(", ") / splits a string into list using indicator ,
@@ -89,9 +94,10 @@ max(),min() / prints the maximum and minimum value
 // DAY 6
 
 def function_name():
-	function body
+	function body / ( pass )
 	return value / for returning a value from the function
 
+*function should be defined before it is called
 *one indent is 4 spaces
 
 while condition:
@@ -122,7 +128,83 @@ dicitonary = {key1:value1, key2:value2}
 """ docstring """ / can give multiline string and can also be used
 			  for commenting
 
+// DAY 12
 
+*python does not have block scope, thus variables defined inside 
+ condition blocks can also be accessed outside the block
+
+global varname / to determine that the variable in a function is
+		     a global variable
+*global constants can be written in uppercase so that we can know
+ not to change the value when we see the variable name
+
+// DAY 16
+
+*classe names are usually written in pascalcasing to differentiate it
+ from variables and function names which is written in snakecasing
+*variables and functions in class are called attributes and methods 
+ respectively
+
+import turtle
+.Turtle() / to create turtle object ( import turtle as t )
+	.shape("shape") / to change the shape of the object
+	.color("colorname") / change color of object
+	.forward(distance) / to move an object
+	.right(angle),.left(angle) / to turn right or left
+	.penup(),.pendown() / to not draw or draw
+	.setheading() / to set direction of movement [0,90,180,270]
+	.pensize() / to set size of pen
+	.speed() / to change turtle speed ( can be integer or string )
+	.circle(radius) / to draw a circle of given radius
+	.heading() / to get the current direction
+	.dot(size,color) / to draw a dot
+	.hideturtle() / to hide the turtle
+	.clear() / clear all off the turtle drawing
+	.home() / go back to the origin
+	.goto(x,y) / to move our turtle to the given coordinates
+	.xcor(),.ycor() / get x and y coordinate
+.Screen() / create screen object
+	.canvheight / height of screen object
+	.exitonclick() / continue running till click
+	.listen() / to listen for events
+	.onkey(key,function) / to call function when a key is pressed
+	.setup(width,height) / to set width and height of the screen
+	.textinput(title,prompt) / to take input from screen
+.colormode() / to set the color mode
+
+import prettytable
+.PrettyTable() / create table object
+	.add_column(column_name,[data1,data2]) / add a new column to table
+							     with these data
+	.align / to change align of table data
+
+// DAY 17
+
+class ClassName():
+	def __init__(self,value): / constructor
+		self.var=value
+	def func(self,class1):
+		self.var+=1
+		class1.var+=1
+
+*we can also define attributes outside the class
+
+// DAY 18
+
+tuple = (data1,data2)
+*we will not be able to change the value of tuples
+list(tuple) / convert tuple to list
+
+import colorgram / module used to extract colors from images
+.extract(image,no. of colors required) / to extract the colors
+						     from the image
+	.rgb / to get rgb values of the color (.r,.g,.b)
+
+
+
+
+
+	
 
 
 
