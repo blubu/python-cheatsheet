@@ -13,6 +13,11 @@ https://emojipedia.org/ => Emojis
 https://pypi.org/ => Python Package Index
 https://opentdb.com/ => Question Database
 https://trinket.io/docs/colors => Turtle Colors
+https://pandas.pydata.org/docs/ => Pandas Documentation
+https://opendata.cityofnewyork.us/data/ => NYC Data
+https://opendata.cityofnewyork.us/data/ => Tkinter Documentation
+https://tkdocs.com/index.html => Tkinter Documentation
+https://colorhunt.co/ => Color Palletes
 
 ***************************************************************************
 
@@ -66,9 +71,11 @@ import random / for importing random module ( from random import * )
 		1
 .shuffle() / shuffles all elements in a list
 
-list = [item1,item2]
+list = [item1,item2,item3]
 list[0] -> item1
-list[-1] -> item2
+list[-1] -> item3
+list[1:3:1] -> item2,item3 / slicing operation ( also works for tuples )
+list[::-1] -> item3,item2,item1
 .append(item) / to add another item to the end of the list 
 .extend([1,2,3]) / to add more than 1 items or another list ( += )
 .choice() / randomly select and element
@@ -116,6 +123,7 @@ and,or,not / logical operators
  variable used to represent that data in the function
 
 math.ceil(num) / rounds up the number [ math module ]
+math.floor(num) / rounds down a number
 
 // DAY 9
 
@@ -150,6 +158,7 @@ import turtle
 	.shape("shape") / to change the shape of the object
 	.color("colorname") / change color of object
 	.forward(distance) / to move an object
+	.backward(distance) / to move backwards
 	.right(angle),.left(angle) / to turn right or left
 	.penup(),.pendown() / to not draw or draw
 	.setheading() / to set direction of movement [0,90,180,270]
@@ -163,6 +172,12 @@ import turtle
 	.home() / go back to the origin
 	.goto(x,y) / to move our turtle to the given coordinates
 	.xcor(),.ycor() / get x and y coordinate
+	.shapesize(length,width) / can stretch the turtle
+	.distance() / to give distance from another turtle or location
+	.write(text,align,font=(font,size,style)) / to write text on 
+								  screen
+	.onscreenclick(function) / to get the x and y coordinates
+	.mainloop() / to keep the screen on
 .Screen() / create screen object
 	.canvheight / height of screen object
 	.exitonclick() / continue running till click
@@ -170,6 +185,11 @@ import turtle
 	.onkey(key,function) / to call function when a key is pressed
 	.setup(width,height) / to set width and height of the screen
 	.textinput(title,prompt) / to take input from screen
+	.bgcolor(color) / to change background color of screen
+	.title("title") / to change the title of the window
+	.tracer() / used to set the tracer
+	.update() / to update the screen
+	.addshape(image) / in order to add an image as a new shape
 .colormode() / to set the color mode
 
 import prettytable
@@ -199,6 +219,130 @@ import colorgram / module used to extract colors from images
 .extract(image,no. of colors required) / to extract the colors
 						     from the image
 	.rgb / to get rgb values of the color (.r,.g,.b)
+
+// DAY 20
+
+time.sleep(seconds) / to delay the program [ time module ]
+
+// DAY 21
+
+class child(parent):
+	def __init__(self):
+		super().__init__() / inherit from parent to child
+	def name():
+		super().name() / calling the same function from parent
+		do this / modifying the function in child
+
+// DAY 24
+
+with open(filename,mode) as file:
+	.read() / to read from file
+	.write("text") / to write to the file
+	.readlines() / to read each line into a list
+	.replace(txt1,txt2) / to replace txt1 with txt2
+	.strip() / in order to remove extra spaces
+	
+.close() / to close an opened file
+*close is used when we do not use with keyword for opening the file 
+
+// DAY 25
+
+import csv / module used for handling csv files
+.reader(file) / to read the file into lists
+
+import pandas
+.read_csv(filepath) / to read a csv file
+.to_dict() / to convert the data to a dictionary
+.to_list() / to get the data as a list
+.mean() / to calculate the mean
+.max() / to get the maximum value
+.DataFrame(data) / to create a dataframe
+.to_csv() / to convert a data to csv
+.item() / to fetch only the data from the table
+
+// DAY 26
+
+new_list = [new_item for item in list] / list comprehension
+new_dict = {new_key:new_value for (key,value) in dict.items() if test} 
+										/ dict comp
+
+for (index, row) in data_frame.iterrows():/ for iterating through the
+	do this					  rows of a pandas dataframe
+
+// DAY 27
+
+def name(*args): 
+	for n in args:
+		do this
+**arg shows there is unlimited arguments and **kwargs is used for different
+ optional keyword argument
+
+.get(key) / it is used to get the value from the key and if there is
+		no key it will return none and does not crash
+
+import tkinter
+
+.Tk() / create a window
+	.mainloop() / keep window on screen
+	.title("text") / to give a title
+	.minsize() / to set the size of window
+	.config(padx, pady)
+	.after(time,func) / to do something after some specified time
+	.after_cancel(timer) / to cancel the effect of after function
+
+.Label(text="", font=()) / to create a label
+	.pack(side,expand) / to show the label onto the screen
+	.place(x,y) / to put the label at a precise position
+	.grid(column,row,columnspan) / place the label at the 
+						 respective grid
+	.config(properties) / to change the properties of the label
+*we cannot use grid and pack in the same program as it shows an error
+
+*we can change the properties either by config or by directly accessing
+ the properties using dot operator or editing the properties as a 
+ dicitonary
+
+.Button(text, command) / to create a button
+	.pack()/ to show the button onto the screen
+*command is passed a function which is called when the button is clicked
+
+.Entry(width) / to create input
+	.get() / to return the input
+	.focus() / to focus onto the entry as window opens
+	.insert(pos,data) / to insert a data to specified entry
+	.delete(from pos, to pos) / to delete entries
+*END is used for the last position
+
+.Spinbox()
+.Scale()
+.Checkbutton()
+.Radiobutton()
+.Listbox()
+
+.Canvas(width,height,bg,highlightthickness) / to create a canvas
+	.create_image(x,y,PhotoImage(file="path")) / to create an image
+	.create_text(x,y,text,fill,font) / to create a text onto the canvas
+	.itemconfig(var,property)
+
+messagebox.showinfo(title,message) / to show a pop up
+messagebox.askokcancel(title,message) / to get a ok popup
+
+*import * only imports all classes and constants
+
+// DAY 29
+
+pyperclip.copy(text) / to copy the text onto the clipboard 
+			     [ import pyperclip ]
+
+
+
+	
+
+
+
+
+
+	
 
 
 
