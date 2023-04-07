@@ -18,6 +18,30 @@ https://opendata.cityofnewyork.us/data/ => NYC Data
 https://opendata.cityofnewyork.us/data/ => Tkinter Documentation
 https://tkdocs.com/index.html => Tkinter Documentation
 https://colorhunt.co/ => Color Palletes
+https://en.wiktionary.org/wiki/Wiktionary:Frequency_lists => Frequency List
+https://github.com/hermitdave/FrequencyWords/tree/master/content/2018 =>  Frequency Words
+https://cloud.google.com/translate/docs/languages?hl=en => Language Support
+https://www.pythonanywhere.com/ => Run Python On Cloud
+https://www.webfx.com/web-development/glossary/http-status-codes/ => HTTP Status Code
+http://open-notify.org/Open-Notify-API/ISS-Location-Now/ => ISS API
+https://www.latlong.net/Show-Latitude-Longitude.html => Latitude And Longitude
+https://kanye.rest/ => Kanye API
+https://sunrise-sunset.org/api => Sun API
+https://www.freeformatter.com/html-escape.html => Format Text
+https://openweathermap.org/current => Get Weather Data
+https://jsonviewer.stack.hu/ => Online JSON Viewer
+https://www.ventusky.com/ => World Weather Conditions
+https://console.twilio.com/ => Twilio API
+https://apilist.fun/ => API List
+https://www.alphavantage.co/ => Stock Market API
+https://newsapi.org/ => News API
+https://pixe.la/ => Habit Tracker API
+https://www.nutritionix.com/business/api => Nutrition API
+https://sheety.co/ => Google Sheets API
+https://partners.kiwi.com/ => Flight Search API
+https://www.crummy.com/software/BeautifulSoup/bs4/doc/ => Beautiful Soup
+Documentation
+https://news.ycombinator.com/ => Hacker News
 
 ***************************************************************************
 
@@ -227,7 +251,7 @@ time.sleep(seconds) / to delay the program [ time module ]
 // DAY 21
 
 class child(parent):
-	def __init__(self):
+	def __init__(self, data: datatype):
 		super().__init__() / inherit from parent to child
 	def name():
 		super().name() / calling the same function from parent
@@ -252,12 +276,13 @@ import csv / module used for handling csv files
 
 import pandas
 .read_csv(filepath) / to read a csv file
-.to_dict() / to convert the data to a dictionary
+.to_dict(orient="record") / to convert the data to a dictionary
+*orient can determine how we should get the dictionary values
 .to_list() / to get the data as a list
 .mean() / to calculate the mean
 .max() / to get the maximum value
 .DataFrame(data) / to create a dataframe
-.to_csv() / to convert a data to csv
+.to_csv(index) / to convert a data to csv
 .item() / to fetch only the data from the table
 
 // DAY 26
@@ -280,7 +305,7 @@ def name(*args):
 .get(key) / it is used to get the value from the key and if there is
 		no key it will return none and does not crash
 
-import tkinter
+import tkinter / for creating user interfaces
 
 .Tk() / create a window
 	.mainloop() / keep window on screen
@@ -334,6 +359,113 @@ messagebox.askokcancel(title,message) / to get a ok popup
 pyperclip.copy(text) / to copy the text onto the clipboard 
 			     [ import pyperclip ]
 
+// DAY 30
+
+*file not found error, key error, index error, type error 
+
+try:
+	try this code
+except error as error_message:
+	do this if above step fails due to the error and print error_message
+else:
+	do this if there is no exceptions
+finally:
+	do this no matter what happens
+raise error("message") / to raise our own errors
+*the raised error should be a defined error
+
+import json / for reading and writing json data
+.dump(data, file, indent) / to add data to the file
+.load(file) / to read data
+.update(data) / to update a data
+
+*only use exception handling if we do not have any other alternatives
+
+// DAY 31
+
+import smtplib / for simple mail transfer protocol
+.SMTP(host) / for connecting to our email provider
+	.starttls() / for encrypting our message and making connection secure
+	.login(user,password) / for logging in
+	.sendmail(from,to,msg="Subject:\n\nbody") / for sending email
+	.close()
+*can also be used with with keyword
+
+import datetime as dt / module for date and time
+.datetime(year,month,day) / to create a new datetime object
+.now() / to get current date and time
+	.year,.month,.day,.weekday()
+	.strftime("%format") / to format date in the way we want
+.timedelta() / to create a time difference
+
+// DAY 33
+
+import requests / for using api
+.get(url,params) / to get data from the api
+	.status_code / to get the status code
+	.raise_for_status / return exception if request did not work
+	.json / to get the json data
+.post(url,json,headers) / for posting the json data to the API
+	.text / to get the posted data as text
+.put(url,json,headers) / to edit already existing information
+.delete(url,headers) / to delete data from an API
+
+1xx - wait
+2xx - success
+3xx - access denied
+4xx - user problem
+5xx - server problem
+
+// DAY 34
+
+import html 
+.unescape(text) / to format text
+
+variable_name: datatype / to set the data type of a variable
+
+// DAY 35
+
+from twilio.rest import Client / for senting sms
+.messages
+	.create(body="", from="", to="")
+	.sid / id of the sent message
+	.status / to get the status of the message
+
+import os / for importing operating system module
+.environ.get("var_name") / to get the env variable
+
+*env variables help us to save variables which we need to run the program
+ but we need those data to be hidden from others
+
+// DAY 36
+
+abs(value) / to get the absolute value
+
+// DAY 39
+
+from pprint import pprint / for pretty printing
+pprint(data)
+
+// DAY 45
+
+import lxml / for lxml parser
+
+from bs4 import BeautifulSoup / for web scraping purposes
+BeautifulSoup(contents, parser)
+	.title.name / gives the name of the title tag
+	.find_all(name,id,class_) / for finding all of the tags
+	.find() / to find only one tag
+	.getText() / for getting the text
+	.get("attribute") / to get value of any attribute
+	.select_one(selector) / to select one item
+	.select(selector) / to select all the items
+
+
+
+
+
+
+
 
 
 	
@@ -343,33 +475,6 @@ pyperclip.copy(text) / to copy the text onto the clipboard
 
 
 	
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
